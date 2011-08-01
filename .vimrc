@@ -23,3 +23,9 @@ set listchars=tab:▸\ ,eol:¬
 " Show relative line numbers in gutter & line number ruler at bottom
 set ruler
 set relativenumber
+
+" Syntax highlight rabl files as ruby (extension list can be comma-delimited
+" list
+au BufRead,BufNewFile *.rabl set filetype=ruby
+" Syntac highlight json files as javascript
+au BufRead,BufNewFile *.json set filetype=javascript
