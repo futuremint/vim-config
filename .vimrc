@@ -23,6 +23,8 @@ set listchars=tab:▸\ ,eol:¬
 " Show relative line numbers in gutter & line number ruler at bottom
 set ruler
 set relativenumber
+" Turn off the search highlight matching after search
+set nohlsearch
 
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
