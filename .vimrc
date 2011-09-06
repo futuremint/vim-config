@@ -17,6 +17,8 @@ set expandtab
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Sets font
 set guifont=DejaVu\ Sans\ Mono\ 9
+" Turns off the toolbar
+set guioptions-=T
 " Shows some fancy characters for tabs & newlines
 set list
 set listchars=tab:▸\ ,eol:¬
@@ -26,8 +28,12 @@ set relativenumber
 " Turn off the search highlight matching after search
 set nohlsearch
 
+" Turn off both scrollbars
+set guioptions-=L
+set guioptions-=R
+
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
-au BufRead,BufNewFile *.rabl set filetype=ruby
+au BufRead,BufNewFile *.rabl,Guardfile set filetype=ruby
 " Syntac highlight json files as javascript
 au BufRead,BufNewFile *.json set filetype=javascript
