@@ -12,9 +12,9 @@ let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
 let g:solarized_contrast="high"
-let g:solarized_visibility="normal"
+let g:solarized_visibility="low"
 colorscheme solarized
-set background=dark
+set background=light
 
 " shortcut for inserting a timestamp
 iab <expr> dts strftime("%x %X") " For windows you want just "%c"
@@ -32,7 +32,7 @@ set list
 set listchars=tab:▸\ ,eol:¬
 " Show relative line numbers in gutter & line number ruler at bottom
 set ruler
-set relativenumber
+set number
 " Only show tab bar if there is more than one tab
 set stal=1
 
@@ -42,6 +42,11 @@ set guioptions-=R
 
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
-au BufRead,BufNewFile *.rabl,Guardfile set filetype=ruby
-" Syntac highlight json files as javascript
-au BufRead,BufNewFile *.json,*.ejs set filetype=javascript
+au BufRead,BufNewFile *.rabl,*.json_builder,Rakefile,Assetfile,Guardfile set ft=ruby
+" Syntax highlight json files as javascript
+au BufRead,BufNewFile *.json,*.ejs set ft=javascript
+" Handlebars templates
+au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
+" Haskell
+au Bufenter *.hs compiler ghc
+filetype plugin on
