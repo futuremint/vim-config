@@ -42,7 +42,7 @@ set guioptions-=R
 
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
-au BufRead,BufNewFile *.rabl,*.json_builder,Rakefile,Assetfile,Guardfile set ft=ruby
+au BufRead,BufNewFile *.rabl,*.json_builder,*.assetfile,Rakefile,Assetfile,Guardfile set ft=ruby
 " Syntax highlight json files as javascript
 au BufRead,BufNewFile *.json,*.ejs set ft=javascript
 " Handlebars templates
