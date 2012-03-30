@@ -352,7 +352,7 @@ endif
 
 " The command-line arguments to supply to the xargs utility
 if !exists('Grep_Xargs_Options')
-    let Grep_Xargs_Options = '--null'
+    let Grep_Xargs_Options = '-0'
 endif
 
 " The find utility is from the cygwin package or some other find utility.
