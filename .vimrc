@@ -24,7 +24,7 @@ set expandtab
 " Store swap files in a central directory
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Sets font
-set guifont=DejaVu\ Sans\ Mono\ 9
+set guifont=Menlo\ 13
 " Turns off the toolbar
 set guioptions-=T
 " Shows some fancy characters for tabs & newlines
@@ -40,6 +40,9 @@ set stal=1
 set guioptions-=L
 set guioptions-=R
 
+" Make the rvm plugin switch when switching buffers
+au BufEnter * Rvm
+
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
 au BufRead,BufNewFile *.rabl,*.json_builder,*.assetfile,Rakefile,Assetfile,Guardfile set ft=ruby
@@ -50,3 +53,5 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 " Haskell
 au Bufenter *.hs compiler ghc
 filetype plugin on
+
+" Statusline
