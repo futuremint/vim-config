@@ -11,20 +11,21 @@ let g:solarized_termtrans=1 " Sets background to 'transparent' which uses termin
 let g:solarized_bold=1
 let g:solarized_underline=1
 let g:solarized_italic=1
-let g:solarized_contrast="high"
+let g:solarized_contrast="low"
 let g:solarized_visibility="low"
 colorscheme solarized
-set background=light
+set background=dark
 
 " shortcut for inserting a timestamp
 iab <expr> dts strftime("%x %X") " For windows you want just "%c"
 " tabs
-set tabstop=2
+set tabstop=4
 set expandtab
+set shiftwidth=4
 " Store swap files in a central directory
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 " Sets font
-set guifont=Menlo\ 13
+set guifont=Menlo\ 12
 " Turns off the toolbar
 set guioptions-=T
 " Shows some fancy characters for tabs & newlines
@@ -33,15 +34,9 @@ set listchars=tab:▸\ ,eol:¬
 " Show relative line numbers in gutter & line number ruler at bottom
 set ruler
 set number
-" Only show tab bar if there is more than one tab
-set stal=1
-
-" Turn off both scrollbars
-set guioptions-=L
-set guioptions-=R
 
 " Make the rvm plugin switch when switching buffers
-au BufEnter * Rvm
+" au BufEnter * Rvm
 
 " Syntax highlight rabl files as ruby (extension list can be comma-delimited
 " list
@@ -54,4 +49,18 @@ au BufRead,BufNewFile *.handlebars,*.hbs set ft=handlebars
 au Bufenter *.hs compiler ghc
 filetype plugin on
 
-" Statusline
+" Window movement with C-h, C-j, C-k, C-l
+nmap <c-h> <c-W>h
+nmap <c-j> <c-W>j
+nmap <c-k> <c-W>k
+nmap <c-l> <c-W>l
+
+" Map left and right arrow keys to change indentation of the current line/selected text
+nmap <Left> <<
+vmap <Left> <gv
+
+nmap <Right> >>
+vmap <Right> >gv
+
+" TagBar config
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
