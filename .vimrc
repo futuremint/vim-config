@@ -1,4 +1,5 @@
-call pathogen#runtime_append_all_bundles()
+" call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 set ai  " Autoindent
 set si  " Smartindent
 set incsearch  " Incremental Search
@@ -35,6 +36,22 @@ set number
 set foldmethod=indent
 set nofoldenable
 set foldlevel=1
+
+" Status line
+" "define custom highlight groups
+set laststatus=2                                "always show status
+set statusline=%{fugitive#statusline()}         "Git branch
+set statusline+=\ %-.50F                        "full filename, limited to 50 chars
+set statusline+=\ [%{strlen(&fenc)?&fenc:'none'} "file encoding
+set statusline+=,%{&ff}]                       "file format
+set statusline+=%y                            "filetype
+set statusline+=\ %h                            "help file flag
+set statusline+=%m                              "modified flag
+set statusline+=%r                              "read only flag
+set statusline+=%=                              "left/right separator
+set statusline+=%c,                             "cursor column
+set statusline+=%l/%L                           "cursor line/total lines
+set statusline+=\ %P                            "percent through fileP
 
 " Make the rvm plugin switch when switching buffers
 " au BufEnter * Rvm
