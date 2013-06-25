@@ -26,6 +26,12 @@ set expandtab
 set shiftwidth=4
 " Store swap files in a central directory
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+" Sets font
+set guifont=Menlo\ 12
+" Turns off the toolbar & scrollbars
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 " Shows some fancy characters for tabs & newlines
 set list
 set listchars=tab:▸\ ,eol:¬
